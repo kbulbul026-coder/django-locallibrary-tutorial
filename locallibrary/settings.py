@@ -44,16 +44,14 @@ DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False # Ensure DEBUG is set to False in production
 
-ALLOWED_HOSTS = ['django-locallibrary-tutorial-hs4f.onrender.com', '127.0.0.1', 'localhost'] # Add your Render URL here
+ALLOWED_HOSTS = ['django-locallibrary-tutorial-hs4f.onrender.com'] # Add your Render URL here
 
 # Optional: Use environment variable for better security and flexibility
 # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') 
 
 #ALLOWED_HOSTS = ["mylibrary.up.railway.app"]
 # Set CSRF trusted origins to allow any app on Railway and the local testing URL
-CSRF_TRUSTED_ORIGINS = ['https://mylibrary.up.railway.app',
-                        'https://django-locallibrary-tutorial-hs4f.onrender.com',
-                        'https://*.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://mylibrary.up.railway.app']
 
 
 # Application definition
@@ -221,14 +219,22 @@ STATIC_URL = '/static/'
 
 # Static file serving.
 # https://whitenoise.readthedocs.io/en/stable/django.html#add-compression-and-caching-support
-STORAGES = {
+'''STORAGES = {
     # ...
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
+'''
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_URL = '/static/'
+
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
