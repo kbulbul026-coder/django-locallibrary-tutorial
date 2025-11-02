@@ -133,15 +133,20 @@ DATABASES = {
         'PORT': '5432',       # Default PostgreSQL port
     }
 }
-'''
+
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://postgres:mSAlFhPrMigeWrKuVVQJKonwjZDDUFBu@crossover.proxy.rlwy.net:16024/railway',
         conn_max_age=600
     )
 }
-
-
+'''
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://test_db_pt1d_user:Loh6nozErWonfLDg1y6jyhVVIQQ0REh8@dpg-d42urbh5pdvs73dgq56g-a.singapore-postgres.render.com/test_db_pt1d',
+        conn_max_age=600
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
