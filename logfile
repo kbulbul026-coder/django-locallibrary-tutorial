@@ -1,0 +1,14 @@
+2025-11-02 08:48:12.037 IST [13125] LOG:  starting PostgreSQL 17.0 on aarch64-unknown-linux-android, compiled by Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2), 64-bit
+2025-11-02 08:48:12.038 IST [13125] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-11-02 08:48:12.041 IST [13125] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2025-11-02 08:48:12.046 IST [13130] LOG:  database system was shut down at 2025-11-02 08:47:57 IST
+2025-11-02 08:48:12.056 IST [13125] LOG:  database system is ready to accept connections
+2025-11-02 08:48:54.403 IST [13166] FATAL:  role "postgres" does not exist
+2025-11-02 08:49:07.646 IST [13179] FATAL:  role "postgres" does not exist
+2025-11-02 08:50:19.326 IST [13125] LOG:  received fast shutdown request
+2025-11-02 08:50:19.327 IST [13125] LOG:  aborting any active transactions
+2025-11-02 08:50:19.331 IST [13125] LOG:  background worker "logical replication launcher" (PID 13133) exited with exit code 1
+2025-11-02 08:50:19.331 IST [13128] LOG:  shutting down
+2025-11-02 08:50:19.333 IST [13128] LOG:  checkpoint starting: shutdown immediate
+2025-11-02 08:50:19.368 IST [13128] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.012 s, total=0.037 s; sync files=11, longest=0.004 s, average=0.002 s; distance=259 kB, estimate=259 kB; lsn=0/152ED30, redo lsn=0/152ED30
+2025-11-02 08:50:19.382 IST [13125] LOG:  database system is shut down

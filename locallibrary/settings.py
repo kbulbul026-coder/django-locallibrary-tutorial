@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,8 +35,8 @@ DEBUG = False
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # Set hosts to allow any app on Railway and the local testing URL
-ALLOWED_HOSTS = ['.railway.app', '.pythonanywhere.com', '127.0.0.1']
-
+#ALLOWED_HOSTS = ['.railway.app', '.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 # Set CSRF trusted origins to allow any app on Railway and the local testing URL
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app',
                         'https://*.pythonanywhere.com']
@@ -90,12 +90,57 @@ WSGI_APPLICATION = 'locallibrary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+# Database
+# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
+# Set default values for the environment variables if they’re not already set
+
+'''
+os.environ.setdefault("PGDATABASE", "railway")
+os.environ.setdefault("PGUSER", "postgres")
+os.environ.setdefault("PGPASSWORD", "mSAlFhPrMigeWrKuVVQJKonwjZDDUFBu")
+os.environ.setdefault("PGHOST", "postgres.railway.internal")
+os.environ.setdefault("PGPORT", "5432")
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ["PGDATABASE"],
+        'USER': os.environ["PGUSER"],
+        'PASSWORD': os.environ["PGPASSWORD"],
+        'HOST': os.environ["PGHOST"],
+        'PORT': os.environ["PGPORT"],
+    }
+}
+
+# settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        #'USER': 'your_database_user',
+        'PASSWORD': 'your_database_password',
+        'HOST': 'localhost',  # Change this to 'localhost' for local development
+        'PORT': '5432',       # Default PostgreSQL port
+    }
+}
+'''
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:mSAlFhPrMigeWrKuVVQJKonwjZDDUFBu@crossover.proxy.rlwy.net:16024/railway',
+        conn_max_age=600
+    )
+}
+
 
 
 # Password validation
