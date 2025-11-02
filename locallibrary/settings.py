@@ -36,7 +36,20 @@ DEBUG = False
 
 # Set hosts to allow any app on Railway and the local testing URL
 #ALLOWED_HOSTS = ['.railway.app', '.pythonanywhere.com', '127.0.0.1']
-ALLOWED_HOSTS = ["mylibrary.up.railway.app"]
+# In your project's settings.py file
+#import os
+
+# ... other settings ...
+
+# SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = False # Ensure DEBUG is set to False in production
+
+ALLOWED_HOSTS = ['django-locallibrary-tutorial-hs4f.onrender.com', '127.0.0.1', 'localhost'] # Add your Render URL here
+
+# Optional: Use environment variable for better security and flexibility
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') 
+
+#ALLOWED_HOSTS = ["mylibrary.up.railway.app"]
 # Set CSRF trusted origins to allow any app on Railway and the local testing URL
 CSRF_TRUSTED_ORIGINS = ['https://mylibrary.up.railway.app',
                         'https://*.pythonanywhere.com']
