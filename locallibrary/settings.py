@@ -52,6 +52,7 @@ ALLOWED_HOSTS = ['django-locallibrary-tutorial-hs4f.onrender.com', '127.0.0.1', 
 #ALLOWED_HOSTS = ["mylibrary.up.railway.app"]
 # Set CSRF trusted origins to allow any app on Railway and the local testing URL
 CSRF_TRUSTED_ORIGINS = ['https://mylibrary.up.railway.app',
+                        'https://django-locallibrary-tutorial-hs4f.onrender.com',
                         'https://*.pythonanywhere.com']
 
 
