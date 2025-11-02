@@ -36,9 +36,9 @@ DEBUG = False
 
 # Set hosts to allow any app on Railway and the local testing URL
 #ALLOWED_HOSTS = ['.railway.app', '.pythonanywhere.com', '127.0.0.1']
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["mylibrary.up.railway.app"]
 # Set CSRF trusted origins to allow any app on Railway and the local testing URL
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app',
+CSRF_TRUSTED_ORIGINS = ['https://mylibrary.up.railway.app',
                         'https://*.pythonanywhere.com']
 
 
