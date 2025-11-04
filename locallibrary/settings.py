@@ -44,7 +44,7 @@ DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False # Ensure DEBUG is set to False in production
 
-ALLOWED_HOSTS = ['django-locallibrary-tutorial-hs4f.onrender.com'] # Add your Render URL here
+ALLOWED_HOSTS = ['*'] # Add your Render URL here
 
 # Optional: Use environment variable for better security and flexibility
 # ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',') 
@@ -115,11 +115,11 @@ DATABASES = {
 
 # Set default values for the environment variables if they’re not already set
 
-'''
-os.environ.setdefault("PGDATABASE", "railway")
-os.environ.setdefault("PGUSER", "postgres")
-os.environ.setdefault("PGPASSWORD", "mSAlFhPrMigeWrKuVVQJKonwjZDDUFBu")
-os.environ.setdefault("PGHOST", "postgres.railway.internal")
+
+os.environ.setdefault("PGDATABASE", "PGlocal")
+os.environ.setdefault("PGUSER", "kbulbul026-coder")
+os.environ.setdefault("PGPASSWORD", "Bulbul@1998")
+os.environ.setdefault("PGHOST", "localhost")
 os.environ.setdefault("PGPORT", "5432")
 
 DATABASES = {
@@ -134,7 +134,7 @@ DATABASES = {
 }
 
 # settings.py
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -152,14 +152,14 @@ DATABASES = {
         conn_max_age=600
     )
 }
-'''
+
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://test_db_pt1d_user:Loh6nozErWonfLDg1y6jyhVVIQQ0REh8@dpg-d42urbh5pdvs73dgq56g-a.singapore-postgres.render.com/test_db_pt1d',
         conn_max_age=600
     )
 }
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -219,18 +219,18 @@ STATIC_URL = '/static/'
 
 # Static file serving.
 # https://whitenoise.readthedocs.io/en/stable/django.html#add-compression-and-caching-support
-'''STORAGES = {
+STORAGES = {
     # ...
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-'''
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+'''
 STATIC_URL = '/static/'
 
 if not DEBUG:
@@ -238,3 +238,4 @@ if not DEBUG:
 
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+'''
