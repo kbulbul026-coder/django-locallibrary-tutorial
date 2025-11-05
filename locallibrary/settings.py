@@ -20,9 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Add support for env variables from file if defined
 
-env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
-load_dotenv(env_path)
+#env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
+#load_dotenv(env_path)
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = os.getenv("SECRET_KEY")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
