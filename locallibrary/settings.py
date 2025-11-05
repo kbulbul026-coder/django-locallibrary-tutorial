@@ -117,7 +117,7 @@ DATABASES = {
 
 # Set default values for the environment variables if they’re not already set
 
-
+'''
 os.environ.setdefault("PGDATABASE", "PGlocal")
 os.environ.setdefault("PGUSER", "kbulbul026-coder")
 os.environ.setdefault("PGPASSWORD", "Bulbul@1998")
@@ -134,7 +134,7 @@ DATABASES = {
         'PORT': os.environ["PGPORT"],
     }
 }
-
+'''
 # settings.py
 '''
 DATABASES = {
