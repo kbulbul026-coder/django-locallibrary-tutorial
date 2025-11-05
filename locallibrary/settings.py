@@ -155,7 +155,7 @@ DATABASES = {
 '''
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://test_db_pt1d_user:Loh6nozErWonfLDg1y6jyhVVIQQ0REh8@dpg-d42urbh5pdvs73dgq56g-a.singapore-postgres.render.com/test_db_pt1d',
+        default='postgresql://postgres:mSAlFhPrMigeWrKuVVQJKonwjZDDUFBu@postgres.railway.internal:5432/railway',
         conn_max_age=600
     )
 }
